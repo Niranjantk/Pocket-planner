@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/About/Assets/index.css">
+    <link rel="js" href="">
+   
+</head>
+
+<body>
+    <div class="main">
+        <div class="sidenav" id="sidenav">
+            <!-- Div Header-->
+            <h2>GeeksforGeeks</h2>
+            <!-- Links in Div -->
+            <a href="#"> Data Structures </a>
+            <a href="#"> Algorithms </a>
+            <a href="#">
+                Interview Preparation
+            </a>
+            <a href="#"> Python </a>
+            <a href="#"> Java </a>
+            <input type="button" value="Logout">
+        </div>
+        <div class="box_main">
+            <div class="box_main_heading">
+                <div class="box_main_heading_h1"><h1>User Managment</h1></div>
+                <div class="box_main_heading_h1"><h1><button>+ new user</button></h1></div>
+            </div>
+            <div class="box_main_users">
+                <table>
+                    <tr>
+                        <thead>
+                            <td>Name</td>
+                            <td>Email</td>
+                            <td>Q&A</td>
+                            <td>Status</td>
+                        </thead>
+                    </tr>
+                    <tr>
+                        <tbody>
+                            <td>Niranjan</td>
+                            <td>niranj@gmail.com</td>
+                            <td>what is this?</td>
+                            <td><button>active</button></td>
+                        </tbody>
+                    </tr>
+                    <tr>
+                        <tfoot>
+                            <td>Anjal</td>
+                            <td>anja;@gmai.com</td>
+                            <td>what is this</td>
+                            <td><button>De active</button></td>
+                        </tfoot>
+                    </tr>
+                </table>
+            </div>
+            <!-- <div class="box1">
+                <div class="head">
+                    <img src="" alt="">
+                    <h2>App name</h2>
+                </div>
+                <input type="text" placeholder="search">
+            </div>
+            <div class="dash-box">
+                <div class="container">
+                    <div class="cnt">
+                        <h5>hdhghh</h5>
+                        <h2>200</h2>
+                    </div>
+                    <div class="img">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="cnt">
+                        <h5>hdhghh</h5>
+                        <h2>200</h2>
+                    </div>
+                    <div class="img">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="cnt">
+                        <h5>hdhghh</h5>
+                        <h2>200</h2>
+                    </div>
+                    <div class="img">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="graph-div">
+                <div class="bar-digrm">
+                  <h2>User Analysis</h2>
+                  <div class="graph" >
+                    <canvas id="userChart"></canvas>
+                  </div>
+                </div>
+                <div class="pie-digrm">
+                    <h2>User Review Analysis</h2>
+                    <div class="graph">
+                        <canvas id="ratingIndicator"></canvas>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class="user-tbl">
+                <div class="user-tbl-data">
+                    <table>
+                    <tr>
+                        <thead>
+                            <td>name</td>
+                            <td>description</td>
+                            <td>status</td>
+                            <td>rate</td>
+                            <td>balance</td>
+                            <td>deposit</td>
+                        </thead>
+                    </tr>
+                    <tbody>
+                    <tr>
+                            
+                            <td>Niranjan</td>
+                            <td>Gas</td>
+                            <td><button>3.5</button></td>
+                            <td>4.5</td>
+                            <td>20,000</td>
+                            <td>40,332</td>
+                    </tr>
+                    <tr>
+                        <td>Anjal</td>
+                        <td>Gas</td>
+                        <td><button>4.5</button></td>
+                        <td>Active</td>
+                        <td>20,000</td>
+                        <td>40,332</td>
+
+                    </tr>
+                </tbody>
+                    </table>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // Bar Chart: Active vs Inactive Users
+    const userLabels = ["January", "February", "March", "April", "May", "June"];
+    const totalUsers = [1000, 1200, 1500, 1700, 2000, 2300];
+    const activeUsers = [700, 800, 1100, 1300, 1500, 1800];
+    const inactiveUsers = totalUsers.map((total, i) => total - activeUsers[i]);
+
+    const userData = {
+        labels: userLabels,
+        datasets: [
+            {
+                label: "Active Users",
+                data: activeUsers,
+                backgroundColor: "rgba(54, 162, 235, 0.7)", // Light blue
+                borderColor: "rgba(54, 162, 235, 1)", // Darker blue
+                borderWidth: 1,
+            },
+            {
+                label: "Inactive Users",
+                data: inactiveUsers,
+                backgroundColor: "rgba(255, 99, 132, 0.7)", // Light red
+                borderColor: "rgba(255, 99, 132, 1)", // Darker red
+                borderWidth: 1,
+            },
+        ],
+    };
+
+    const userConfig = {
+        type: "bar",
+        data: userData,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        color: "#000", // Text color for legend
+                    },
+                },
+                title: {
+                    display: true,
+                    text: "Monthly User Analysis (Active vs Inactive)",
+                    font: {
+                        size: 16,
+                        color: "#000", // Text color for title
+                    },
+                },
+            },
+            scales: {
+                x: {
+                    stacked: true,
+                    title: {
+                        display: true,
+                        text: "Months",
+                        font: {
+                            size: 14,
+                            color: "#000", // Text color for X-axis title
+                        },
+                    },
+                },
+                y: {
+                    stacked: true,
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: "Number of Users",
+                        font: {
+                            size: 14,
+                            color: "#000", // Text color for Y-axis title
+                        },
+                    },
+                },
+            },
+        },
+    };
+
+    const userCtx = document.getElementById("userChart").getContext("2d");
+    new Chart(userCtx, userConfig);
+
+    // Doughnut Chart: User Ratings
+    const ratings = {
+        positive: 120,
+        neutral: 60,
+        negative: 20,
+    };
+
+    const totalRatings = ratings.positive + ratings.neutral + ratings.negative;
+
+    const ratingData = {
+        labels: ["Positive (4+)", "Neutral (2-4)", "Negative (<2)"],
+        datasets: [
+            {
+                data: [ratings.positive, ratings.neutral, ratings.negative],
+                backgroundColor: [
+                    "rgba(54, 162, 235, 0.7)", // Light blue
+                    "rgba(255, 206, 86, 0.7)", // Light yellow
+                    "rgba(255, 99, 132, 0.7)", // Light red
+                ],
+                borderColor: "rgba(255, 255, 255, 1)", // White border
+                borderWidth: 2,
+            },
+        ],
+    };
+
+    const ratingConfig = {
+        type: "doughnut",
+        data: ratingData,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        color: "#000", // Text color for legend
+                    },
+                },
+                title: {
+                    display: true,
+                    text: "User Rating Indicator",
+                    font: {
+                        size: 16,
+                        color: "#fff", // Text color for title
+                    },
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            const value = context.raw;
+                            const percentage = ((value / totalRatings) * 100).toFixed(1);
+                            return `${context.label}: ${percentage}% (${value})`;
+                        },
+                    },
+                },
+            },
+            cutout: '70%', // Inner empty space
+        },
+    };
+
+    const ratingCtx = document.getElementById("ratingIndicator").getContext("2d");
+    new Chart(ratingCtx, ratingConfig);
+});
+
+
+
+</script> -->
+
+</body>
+
+</html>
