@@ -56,7 +56,7 @@ body{
    display: flex;   
 }
 .dash-box{
-   margin: 10px;
+   margin: 20px 45px 20px 45px;
     display: flex;
     gap: 20px;
 }
@@ -68,7 +68,6 @@ body{
     grid-area: box;
     display: flex;
     flex-direction: column;
-    padding: 20px;
 }
 
 .main {
@@ -80,7 +79,6 @@ body{
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    gap: 10px;
 }
 .container{
     display: flex;
@@ -89,7 +87,7 @@ body{
     align-content: center;
     background-color: #507687;
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px 40px;
 
 }
 .img{
@@ -129,26 +127,30 @@ canvas{
 .user-tbl{
     margin-top: 15px;
     border-radius: 12px;
-    padding: 12px;
+    padding: 20px 30px;
     background-color: #507687;
+    
 }
-.user-tbl-data table {
-    margin: 10px;
-   
+.user-tbl table {
+    margin: auto;
+    /* margin: 10px; */
     padding: 8px;
     border-radius: 12px;
-    width: 99%;
+    border-collapse: collapse;
+    width: 100%;
 }
-.user-tbl-data tbody  td{
+.user-tbl tbody  td{
     background-color: #00ADB5;
     padding: 12px;
-    border-radius: 3px;
 }
-.user-tbl-data tbody td button{
+.user-tbl tbody td button{
     padding: 6px 10px;
     border-radius: 10px;
-    border: no;
-}
-.user-tbl table{
     border: none;
+}
+.user-tbl table,thead,tbody,tr,th,td{
+    border: none;
+}
+.user-tbl table tbody tr{
+    border-bottom: 2px solid #dcd8d857;
 }
