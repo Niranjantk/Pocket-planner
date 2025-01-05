@@ -21,6 +21,7 @@ body{
     color: #fff;
     border: none;
 }
+/* side navigation start */
 .sidenav img{
     margin-right: 20px;
 }
@@ -98,7 +99,7 @@ body{
     justify-content: space-between;
     margin-left: 350px;
 }
-
+/* navigation */
 .main {
     display: grid;
     grid-template-areas: 'nav  box box box';
