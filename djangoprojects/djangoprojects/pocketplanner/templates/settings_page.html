@@ -1,0 +1,51 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>settings PP</title>
+    <!-- fontawesome cdn -->
+    
+    <link rel="stylesheet" href="{% static 'css/settings_style.css' %}">
+    <link rel="js" href="">
+   
+</head>
+
+<body>
+    <div class="main">
+        <div class="sidenav" id="sidenav">
+            <!-- Div Header-->
+            <h2><img src="{% static 'assets/admin_profile_icon.png' %}" alt="">anjal</h2>
+            <!-- Links in Div -->
+            <a href="/Management_home" ><span><img src="{% static 'assets/Admin_managment_icon.png' %}" alt="">Managment</span> </a>
+            <a href="/Monitoring" > <span><img src="{% static 'assets/Admin_monitoring_icon.png' %}" alt="">Monitoring</span> </a>
+            <a href="/Support" ><span > <img src="{% static 'assets/Admin_support_icon.png' %}" alt="">Support</span></a>
+            <a href="/About" > <span><img src="{% static 'assets/Admin_about_icon.png' %}" alt="">About</span> </a>
+            <a href="/Settings" id="managment"><span><img src="{% static 'assets/Admin_settings_icon.png' %}" alt="">Settings</a>
+            <button class="logout" href=""><span>Logout</span></button>
+        </div>
+        <div class="box_main">
+              <!-- content here -->
+
+         
+            <div class="box_main_heading">
+                <div class="box_main_heading_h1"><h1>User Managment</h1></div>
+                <!-- <div class="box_main_heading_h1"><h1><button>+ new user</button></h1></div> -->
+            </div>
+            <div class="box_main_users">
+
+                <h4></h4>
+                <!-- backgeound colour change -->
+
+                <fieldset>
+                    <legend><h2>settings</h2></legend>
+                    <p><strong>Theam selection <button>Dark</button><button>Light</button></strong></p>
+                    
+                </fieldset>
+            </div>
+            <!-- content end here  -->
+           </div>
+</body>
+
+</html>
