@@ -1,0 +1,75 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring PP</title>
+    <!-- fontawesome cdn -->
+    
+    <link rel="stylesheet" href="{% static 'css/Monitoring_style.css' %}">
+    <link rel="js" href="">
+   
+</head>
+
+<body>
+    <div class="main">
+        <div class="sidenav" id="sidenav">
+            <!-- Div Header-->
+            <h2><img src="{% static 'assets/admin_profile_icon.png' %}" alt="">anjal</h2>
+            <!-- Links in Div -->
+            <a href="/Management_home" ><span><img src="{% static 'assets/Admin_managment_icon.png' %}" alt="">Managment</span> </a>
+            <a href="/Monitoring" id="managment"> <span><img src="{% static 'assets/Admin_monitoring_icon.png' %}" alt="">Monitoring</span> </a>
+            <a href="/Support"><span > <img src="{% static 'assets/Admin_support_icon.png' %}" alt="">Support</span></a>
+            <a href="/About"> <span><img src="{% static 'assets/Admin_about_icon.png' %}" alt="">About</span> </a>
+            <a href="/settings"><span><img src="{% static 'assets/Admin_settings_icon.png' %}" alt="">Settings</a>
+            <button class="logout" href=""><span>Logout</span></button>
+        </div>
+        <div class="box_main">
+              <!-- content here -->
+
+         
+            <div class="box_main_heading">
+                <div class="box_main_heading_h1"><h1>User Managment</h1></div>
+                <!-- <div class="box_main_heading_h1"><h1><button>+ new user</button></h1></div> -->
+            </div>
+            <div class="box_main_users">
+               <table >
+                <tr>
+                    
+                    <th>Username</th>
+                    <th>Gmail</th>
+                    <th>Category</th>
+                    <th>Country</th>
+                    <th>Date of creation</th>
+                    <th>Remove</th>
+                    <!-- gmail -->
+                     <!-- phone no //-->
+                      <!-- password //-->
+                       <!-- usrename -->
+                        <!-- category -->
+                         <!-- country -->
+                          <!-- date of creation -->
+                           <!-- remove -->
+                    
+                </tr>
+                {% for user in user_instance %}
+                <tr>
+                    
+                    <td><input type="checkbox">{{user.username}} </td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phoneno}}</td>
+                    <td>{{ user.category }}</td>
+                    <td>{{user.country}}</td>
+                    <td></td>
+                    <td><a href="#">Remove</a></td>
+                </tr>
+                {% endfor %}
+                
+               </table>
+            </div>
+            <!-- content end here  -->
+        </div>  
+</body>
+
+</html>

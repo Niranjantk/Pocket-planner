@@ -1,0 +1,80 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings PP</title>
+    <link rel="stylesheet" href="{% static 'css/settings_style.css' %}">
+    <style>
+        button {
+            background-color: lightcoral;
+            padding: 7px 13px;
+            border: none;
+            border-radius: 12px;
+            margin: 5px 10px;
+        }
+        input{
+            width: 60%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="sidenav" id="sidenav">
+            <h2><img src="{% static 'assets/admin_profile_icon.png' %}" alt="">Anjal</h2>
+            <a href="/Management_home"><span><img src="{% static 'assets/Admin_managment_icon.png' %}"
+                        alt="">Management</span></a>
+            <a href="/Monitoring"><span><img src="{% static 'assets/Admin_monitoring_icon.png' %}"
+                        alt="">Monitoring</span></a>
+            <a href="/Support"><span><img src="{% static 'assets/Admin_support_icon.png' %}" alt="">Support</span></a>
+            <a href="/About"><span><img src="{% static 'assets/Admin_about_icon.png' %}" alt="">About</span></a>
+            <a href="/Settings" id="managment"><span><img src="{% static 'assets/Admin_settings_icon.png' %}"
+                        alt="">Settings</span></a>
+            <button class="logout">Logout</button>
+        </div>
+
+        <div class="box_main">
+            <div class="box_main_heading">
+                <h1 style="color: #fff;">User Management</h1>
+            </div>
+
+            <div class="box_main_users">
+                <fieldset>
+                    <legend>
+                        <h2>Settings</h2>
+                    </legend>
+
+                    <!-- Theme Selection -->
+                    <p><strong>Theme Selection</strong></p>
+                    <div class="theme-toggle">
+                        <button class="theme-btn dark">Dark</button>
+                        <button class="theme-btn light">Light</button>
+                    </div>
+
+                    <!-- Password Change -->
+                    <p><strong>Change Password</strong></p>
+                    <input type="password" placeholder="New Password" class="input-field">
+                    <input type="password" placeholder="Confirm Password" class="input-field">
+                    <br>
+                    <button class="update-btn">Update Password</button>
+
+                    <!-- Notifications -->
+                    <p><strong>Notifications</strong></p>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label> Enable Email Notifications
+                </fieldset>
+                <button>save</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
