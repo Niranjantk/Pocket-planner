@@ -1,0 +1,116 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support PP</title>
+    <link rel="stylesheet" href="{% static 'css/Support_style.css' %}">
+</head>
+
+<body>
+    <div class="main">
+        <div class="sidenav" id="sidenav">
+            <h2><img src="{% static 'assets/admin_profile_icon.png' %}" alt="">anjal</h2>
+            <a href="/Management_home"><span><img src="{% static 'assets/Admin_managment_icon.png' %}" alt="">Management</span></a>
+            <a href="/Monitoring"><span><img src="{% static 'assets/Admin_monitoring_icon.png' %}" alt="">Monitoring</span></a>
+            <a href="/Support" id="managment"><span><img src="{% static 'assets/Admin_support_icon.png' %}" alt="">Support</span></a>
+            <a href="/About"><span><img src="{% static 'assets/Admin_about_icon.png' %}" alt="">About</span></a>
+            <a href="/settings"><span><img src="{% static 'assets/Admin_settings_icon.png' %}" alt="">Settings</span></a>
+            <a class="logout" href="/logout"><span>Logout</span></a>
+        </div>
+
+        <div class="box_main">
+            <div class="box_main_heading">
+                <div class="box_main_heading_h2">
+                    <h1>Support Section</h1>
+                </div>
+            </div>
+
+            <div class="box_main_users">
+                <table>
+                    <tr>
+                        <th>Username</th>
+                        <th>Date of Question</th>
+                        <th>Question</th>
+                        <th>Response</th>
+                        <th>Send</th>
+                    </tr>
+
+                    {% for i in obj %}
+                    <tr>
+                        <td>{{ i.User.username }}</td>
+                        <td>{{ i.support_date }}</td>
+                        <td>{{ i.support }}</td>
+                        <td><a href="#" onclick="replyToMessage({{ i.id }})">Reply</a></td>
+                        <td><span class="reply-text" id="reply_{{ i.id }}">{{ i.reply }}</span></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function replyToMessage(complaintId) {
+            let userReply = prompt("Enter your reply:");
+            
+            if (userReply !== null && userReply.trim() !== "") {
+                // Store in localStorage for temporary UI update
+                localStorage.setItem(`reply_${complaintId}`, userReply);
+                document.getElementById(`reply_${complaintId}`).textContent = userReply;
+
+                // Send POST request to backend
+                fetch(`/support/${complaintId}/`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRFToken": getCSRFToken()  // Fetch CSRF token
+                    },
+                    body: JSON.stringify({ reply: userReply })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Failed to send reply.");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("Reply saved:", data);
+                })
+                .catch(error => {
+                    console.error("Error saving reply:", error);
+                    alert("Failed to save reply. Please try again.");
+                });
+            }
+        }
+
+        // Load replies from localStorage on page refresh
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelectorAll(".reply-text").forEach(span => {
+                let complaintId = span.id.split("_")[1];
+                let storedReply = localStorage.getItem(`reply_${complaintId}`);
+                if (storedReply) {
+                    span.textContent = storedReply;
+                    span.style.color = "blue"; // Highlight saved replies
+                }
+            });
+        });
+
+        // Function to get CSRF token from cookies
+        function getCSRFToken() {
+            let cookieValue = null;
+            if (document.cookie) {
+                let cookies = document.cookie.split(";");
+                cookies.forEach(cookie => {
+                    let trimmedCookie = cookie.trim();
+                    if (trimmedCookie.startsWith("csrftoken=")) {
+                        cookieValue = trimmedCookie.substring("csrftoken=".length);
+                    }
+                });
+            }
+            return cookieValue;
+        }
+    </script>
+</body>
+</html>
